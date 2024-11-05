@@ -7,6 +7,11 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
+web/app/languages/*
+!web/app/languages/.gitkeep
+*.sql
+*.zip
+*.gz
 
 # WordPress
 web/wp
@@ -25,3 +30,6 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+# OS
+.DS_Store
