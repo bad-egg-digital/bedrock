@@ -64,7 +64,8 @@
     "wpackagist-plugin/flamingo": "^2.5",
     "roots/acorn": "^4.3",
     "roots/acorn-prettify": "^1.0",
-    "koodimonni-language/core-en_gb": "^6.6"
+    "koodimonni-language/core-en_gb": "^6.6",
+    "johnbillion/extended-cpts": "^5.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
