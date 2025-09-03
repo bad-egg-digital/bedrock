@@ -28,6 +28,23 @@
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.badegg.uk"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io",
+      "only": [
+          "koodimonni-language/*",
+          "koodimonni-plugin-language/*",
+          "koodimonni-theme-language/*"
+      ]
+    },
+    {
+      "type":"composer",
+      "url":"https://connect.advancedcustomfields.com"
     }
   ],
   "require": {
@@ -40,7 +57,15 @@
     "roots/wordpress": "6.8.2",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "roots/acorn": "^4.3"
+    "roots/acorn": "^4.3",
+    "koodimonni-language/core-en_gb": "^6.8",
+    "johnbillion/extended-cpts": "^5.1",
+    "wpackagist-plugin/autodescription": "^5.1",
+    "badegguk/bad-egg-digital-login-page": "^1.0",
+    "wpackagist-plugin/fluent-smtp": "^2.2",
+    "roots/acorn-prettify": "^1.0",
+    "wpackagist-plugin/contact-form-7": "^6.1",
+    "wpackagist-plugin/flamingo": "^2.6"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -51,14 +76,19 @@
     "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "koodimonni/composer-dropin-installer": true
     }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "badegguk/bad-egg-digital-login-page",
+        "wpengine/advanced-custom-fields-pro"
+      ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
