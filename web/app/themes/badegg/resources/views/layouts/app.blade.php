@@ -11,23 +11,30 @@
     @php(wp_body_open())
 
     <div id="app">
-      <a class="sr-only focus:not-sr-only" href="#main">
-        {{ __('Skip to content') }}
+      <a class="visually-hidden" href="#main">
+        {{ __('Skip to content', 'sage') }}
       </a>
 
-      @include('sections.header')
+      <div class="wrapper section-has-angle section-has-angle-bottom">
 
-      <main id="main" class="main">
-        @yield('content')
-      </main>
+        @include('sections.header.header')
 
-      @hasSection('sidebar')
-        <aside class="sidebar">
-          @yield('sidebar')
-        </aside>
-      @endif
+        <main id="main" class="main">
+          @yield('content')
+        </main>
 
-      @include('sections.footer')
+        @hasSection('sidebar')
+          <aside class="sidebar">
+            @yield('sidebar')
+          </aside>
+        @endif
+
+        <div class="last-slice angle-slice-wrap bottom">
+          <div class="angle-slice small bottom right"></div>
+        </div>
+      </div>
+
+      @include('sections.footer.footer')
     </div>
 
     @php(do_action('get_footer'))

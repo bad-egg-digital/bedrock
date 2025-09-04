@@ -1,0 +1,152 @@
+#app {
+  container-type: inline-size;
+}
+
+.wrapper,
+.wrapper.section-has-angle {
+  padding: 0;
+}
+
+.badegg-blocks {
+  .badegg-block {
+    &:last-of-type {
+      @extend .section-has-angle;
+      @extend .section-has-angle-bottom;
+    }
+  }
+}
+
+.brand {
+  display: block;
+  width: $brandWidth;
+  // height: $brandHeight;
+
+  svg,
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    // height: $brandHeight;
+  }
+
+  .knockout & {
+    @media screen {
+      .fill-primary {
+        fill: $white;
+      }
+
+      .fill-grey {
+        fill: rgba($white, 0.8);
+      }
+    }
+  }
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+
+  &-large { max-width: $containerLarge; }
+  &-medium { max-width: $containerMedium; }
+  &-small { max-width: $containerSmall; }
+  &-narrow { max-width: $containerNarrow; }
+}
+
+.section {
+  padding: $sectionMedium 0;
+
+  &-small { padding: $sectionSmall 0; }
+  &-medium { padding: $sectionMedium 0; }
+  &-large { padding: $sectionLarge 0; }
+
+  &-zero-top { padding-top: 0; }
+  &-zero-bottom { padding-bottom: 0; }
+
+  @container (min-width: #{$screen-lg}) {
+    padding: $sectionLarge 0;
+  }
+
+  &-intro {
+    &-inner {
+      max-width: $containerSmall;
+    }
+
+    &.align-right {
+      justify-content: flex-end;
+      display: flex;
+    }
+
+    &.align-centre {
+      max-width: $containerNarrow;
+
+      .section-intro-inner {
+        margin: auto;
+      }
+    }
+  }
+}
+
+.inner {
+  padding: $innerMedium;
+
+  &-small { padding: $innerSmall; }
+  &-large { padding: $innerLarge; }
+
+  &-zero-x {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &-zero-y {
+    padding-top: 0;
+    padding-top: 0;
+  }
+}
+
+.rounded {
+  border-radius: $borderRadius;
+
+  &-top {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &-bottom {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+.border {
+  border-style: solid;
+  border-width: $borderWidth;
+
+  &-thin { border-width: 0.0625em; }
+  &-regular { border-width: $borderWidth; }
+  &-thick { border-width: $borderThick; }
+  &-thicker { border-width: $borderThicker; }
+
+  &-top {
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+  }
+
+  &-right {
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+  }
+
+  &-bottom {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+  }
+
+  &-left {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+  }
+}

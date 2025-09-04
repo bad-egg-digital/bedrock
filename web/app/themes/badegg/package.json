@@ -23,6 +23,7 @@
     "@roots/sage": "6.20.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "@roots/bud-sass": "^6.24.0"
   }
 }
