@@ -44,6 +44,40 @@ if (! function_exists('\Roots\bootloader')) {
 
 /*
 |--------------------------------------------------------------------------
+| Autoload PSR-4 files
+|--------------------------------------------------------------------------
+*/
+
+function autoload_psr4($name) {
+    $path = __dir__ . '/app/' . $name . '/*.php';
+    $namespace = 'App\\' . $name;
+
+    foreach(glob($path) as $filename) {
+        $class = $namespace . '\\' . basename($filename, '.php');
+        new $class();
+    }
+}
+
+function autoload_psr4_blocks() {
+    $blockDir = __dir__ . '/resources/views/blocks';
+
+    if(!is_dir($blockDir)) return;
+
+    $path = $blockDir . '/*';
+    $namespace = 'Blocks\\';
+
+    foreach(glob($path, GLOB_ONLYDIR) as $directory) {
+        $name = basename($directory);
+        $class = $namespace . $name . '\\' . $name;
+        new $class();
+    }
+}
+
+autoload_psr4('Admin');
+autoload_psr4_blocks();
+
+/*
+|--------------------------------------------------------------------------
 | Register Sage Theme Files
 |--------------------------------------------------------------------------
 |
