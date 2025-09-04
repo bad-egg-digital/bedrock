@@ -33,12 +33,6 @@ class Dynamic
             $field['choices'][$slug] = '<i class="fas fa-circle" style="color: '. $hex .'"></i> ' . @$NameThatColour->name($hex)['name'];
         endforeach;
 
-        $field['choices']['quaternary-white'] = '<i class="fas fa-circle text-gradient text-gradient-quaternary-white"></i> ' . @$NameThatColour->name($colour->name2hex('quaternary'))['name'] . ' to White';
-        $field['choices']['quinary-white'] = '<i class="fas fa-circle text-gradient text-gradient-quinary-white"></i> ' . @$NameThatColour->name($colour->name2hex('quinary'))['name'] . ' to White';
-
-        $field['choices']['white-quaternary'] = '<i class="fas fa-circle text-gradient text-gradient-white-quaternary"></i> White to ' . @$NameThatColour->name($colour->name2hex('quaternary'))['name'];
-        $field['choices']['white-quinary'] = '<i class="fas fa-circle text-gradient text-gradient-white-quinary"></i> White to ' . @$NameThatColour->name($colour->name2hex('quinary'))['name'];
-
         return $field;
 
     }

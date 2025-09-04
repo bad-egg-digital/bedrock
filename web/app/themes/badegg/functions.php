@@ -59,11 +59,7 @@ function autoload_psr4($name) {
 }
 
 function autoload_psr4_blocks() {
-    $blockDir = __dir__ . '/resources/views/blocks';
-
-    if(!is_dir($blockDir)) return;
-
-    $path = $blockDir . '/*';
+    $path = __dir__ . '/resources/views/blocks/*';
     $namespace = 'Blocks\\';
 
     foreach(glob($path, GLOB_ONLYDIR) as $directory) {

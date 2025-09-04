@@ -67,7 +67,8 @@
     "wpackagist-plugin/contact-form-7": "^6.1",
     "wpackagist-plugin/flamingo": "^2.6",
     "wpackagist-plugin/resizable-editor-sidebar": "^1.02",
-    "wpengine/advanced-custom-fields-pro": "^6.5"
+    "wpengine/advanced-custom-fields-pro": "^6.5",
+    "ourcodeworld/name-that-color": "dev-master"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
