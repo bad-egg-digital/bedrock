@@ -1,0 +1,148 @@
+<?php
+
+namespace App\ACF;
+use ourcodeworld\NameThatColor\ColorInterpreter as NameThatColor;
+use App\Utilities;
+
+class Dynamic
+{
+    public function __construct()
+    {
+        add_filter('acf/load_field/name=colour',                [ $this, 'load_colours'   ]);
+        add_filter('acf/load_field/name=bg_colour',             [ $this, 'load_colours'   ]);
+        add_filter('acf/load_field/name=tint',                  [ $this, 'load_tints'   ]);
+        add_filter('acf/load_field/name=bg_tint',               [ $this, 'load_tints'   ]);
+        add_filter('acf/load_field/name=fontawesome_regular',   [ $this, 'load_fontawesome_regular_icons' ]);
+        add_filter('acf/load_field/name=fontawesome_solid',     [ $this, 'load_fontawesome_solid_icons'   ]);
+        add_filter('acf/load_field/name=fontawesome_brands',    [ $this, 'load_fontawesome_brand_icons'   ]);
+
+        add_action( 'acf/input/admin_footer', [$this, 'colour_ui'] );
+    }
+
+    public function load_colours( $field )
+    {
+        $colour = new Utilities\Colour;
+        $NameThatColour = new NameThatColor;
+
+        $defined = get_field('badegg_colours', 'option');
+        $colours = $colour->values();
+
+        $field['choices'] = [];
+
+        foreach($colours as $slug => $hex):
+            $field['choices'][$slug] = '<i class="fas fa-circle" style="color: '. $hex .'"></i> ' . @$NameThatColour->name($hex)['name'];
+        endforeach;
+
+        $field['choices']['quaternary-white'] = '<i class="fas fa-circle text-gradient text-gradient-quaternary-white"></i> ' . @$NameThatColour->name($colour->name2hex('quaternary'))['name'] . ' to White';
+        $field['choices']['quinary-white'] = '<i class="fas fa-circle text-gradient text-gradient-quinary-white"></i> ' . @$NameThatColour->name($colour->name2hex('quinary'))['name'] . ' to White';
+
+        $field['choices']['white-quaternary'] = '<i class="fas fa-circle text-gradient text-gradient-white-quaternary"></i> White to ' . @$NameThatColour->name($colour->name2hex('quaternary'))['name'];
+        $field['choices']['white-quinary'] = '<i class="fas fa-circle text-gradient text-gradient-white-quinary"></i> White to ' . @$NameThatColour->name($colour->name2hex('quinary'))['name'];
+
+        return $field;
+
+    }
+
+    public function load_tints( $field )
+    {
+        $colour = new Utilities\Colour;
+        $tints = $colour->tints();
+
+        $field['choices'] = [];
+
+        foreach($tints as $slug => $hex):
+            if($slug):
+                $field['choices'][$slug] = ucfirst($slug);
+
+            else:
+                $field['choices'][0] = 'None';
+            endif;
+        endforeach;
+
+        return $field;
+    }
+
+    public function load_fontawesome_regular_icons( $field )
+    {
+        $field['choices'] = [];
+        $field['choices'] = $this->fontawesome_choices('regular');
+
+        return $field;
+    }
+
+    public function load_fontawesome_solid_icons( $field )
+    {
+        $field['choices'] = [];
+        $field['choices'] = $this->fontawesome_choices('solid');
+
+        return $field;
+    }
+
+    public function load_fontawesome_brand_icons( $field )
+    {
+        $field['choices'] = [];
+        $field['choices'] = $this->fontawesome_choices('brands');
+
+        return $field;
+    }
+
+    public function fontawesome_choices($set = 'solid')
+    {
+        $path = get_stylesheet_directory() . '/resources/json/font-awesome-' . $set . '.json';
+
+        $json = @file_get_contents($path);
+
+        if(!$json) return false;
+        $icons = json_decode($json, true);
+
+        $choices = [
+            '0' => '<i class="fa-solid"></i> <span>Please select an icon</span>',
+        ];
+
+        foreach($icons as $slug => $props):
+            if(in_array($slug, range(0,9))) continue;
+
+            $choices[$slug] = '<i class="fa-'.$set.' fa-'.$slug.'" style="color: #2271b1;"></i> <span>' . (ucwords(str_replace('-', ' ', $slug))) . '</span>';
+        endforeach;
+
+        return $choices;
+    }
+
+    public function colour_ui()
+    { ?>
+
+        <script type="text/javascript">
+            console.log("Script loaded from sage/app/ACF/Dynamic.php");
+
+            (function($) {
+
+                function my_custom_escaping_method( original_value){
+                    return original_value;
+                }
+
+                acf.add_filter('select2_escape_markup', function( escaped_value, original_value, $select, settings, field, instance ){
+                    console.log(field.data('name'));
+
+                    const whitelist = [
+                        'colour',
+                        'bg_colour',
+                        'angle_colour',
+                    ];
+
+                    // do something to the original_value to override the default escaping, then return it.
+                    // this value should still have some kind of escaping for security, but you may wish to allow specific HTML.
+                    if (whitelist.includes(field.data( 'name' ))) {
+                        return my_custom_escaping_method( original_value );
+                    }
+
+                    // return
+                    return escaped_value;
+                });
+
+            })(jQuery);
+
+        </script>
+
+    <?php }
+}
+

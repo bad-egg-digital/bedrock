@@ -73,6 +73,9 @@ function autoload_psr4_blocks() {
     }
 }
 
+autoload_psr4('PostTypes');
+autoload_psr4('ACF');
+autoload_psr4('Utilities');
 autoload_psr4('Admin');
 autoload_psr4_blocks();
 
