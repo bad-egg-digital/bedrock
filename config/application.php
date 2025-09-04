@@ -156,7 +156,28 @@ if (file_exists($env_config)) {
     require_once $env_config;
 }
 
+/**
+ * Advanced Custom Fields Pro License
+ */
 Config::define('ACF_PRO_LICENSE', env('ACF_PRO_LICENSE'));
+
+
+/**
+ * s3 uploads settings
+ */
+Config::define('S3_UPLOADS_BUCKET',     env('S3_UPLOADS_BUCKET'));
+Config::define('S3_UPLOADS_BUCKET_URL', env('S3_UPLOADS_BUCKET_URL'));
+Config::define('S3_UPLOADS_REGION',     env('S3_UPLOADS_REGION'));
+Config::define('S3_UPLOADS_KEY',        env('S3_UPLOADS_KEY'));
+Config::define('S3_UPLOADS_SECRET',     env('S3_UPLOADS_SECRET'));
+
+
+/**
+ * Fluent SMTP Setings
+ */
+Config::define('FLUENTMAIL_SMTP_USERNAME', env('FLUENTMAIL_SMTP_USERNAME'));
+Config::define('FLUENTMAIL_SMTP_PASSWORD', env('FLUENTMAIL_SMTP_PASSWORD'));
+
 
 Config::apply();
 
