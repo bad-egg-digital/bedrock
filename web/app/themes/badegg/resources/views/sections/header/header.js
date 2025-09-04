@@ -4,6 +4,8 @@ export default function Header() {
   const menuToggle = document.querySelector(".js-menu-toggle");
   const menuClose = document.querySelector(".js-menu-close");
 
+  if(!menuToggle) return;
+
   menuToggle.addEventListener("click", (e) => {
     e.preventDefault();
     body.classList.toggle("menu-open");

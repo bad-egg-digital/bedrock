@@ -15,27 +15,6 @@ h6 {
     margin-top: 0;
   }
 
-  &.has-flourish {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-      display: block;
-      width: 1em;
-      height: 1em;
-      mask-image: url("~/images/flourish-flipped.svg");
-      mask-repeat: no-repeat;
-      mask-size: contain;
-      background: $secondary;
-      transform: translate(-55%, -40%) rotate(270deg);
-      pointer-events: none;
-      font-size: 2em;
-    }
-  }
-
   @media screen {
     .knockout & {
       color: $white;

@@ -2,18 +2,8 @@
   container-type: inline-size;
 }
 
-.wrapper,
-.wrapper.section-has-angle {
+.wrapper {
   padding: 0;
-}
-
-.badegg-blocks {
-  .badegg-block {
-    &:last-of-type {
-      @extend .section-has-angle;
-      @extend .section-has-angle-bottom;
-    }
-  }
 }
 
 .brand {

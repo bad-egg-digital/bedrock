@@ -1,8 +1,12 @@
 export default function Footer() {
   const body = document.querySelector("body");
   const footer = document.querySelector(".js-footer");
+
+  if(!footer) return;
+
   const links = footer.querySelectorAll("a");
   const currentURL = location.protocol + '//' + location.host + location.pathname;
+
 
   links.forEach(link => {
     const hash = link.hash;
