@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b8525083f5c12f03aeca90fe1736b0a",
+    "content-hash": "104ea3d29e936d8eff7dbc4db90cafe2",
     "packages": [
         {
             "name": "badegguk/bad-egg-digital-login-page",
@@ -6898,6 +6898,24 @@
             "homepage": "https://wordpress.org/plugins/fluent-smtp/"
         },
         {
+            "name": "wpackagist-plugin/resizable-editor-sidebar",
+            "version": "1.02",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/resizable-editor-sidebar/",
+                "reference": "tags/1.02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/resizable-editor-sidebar.1.02.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/resizable-editor-sidebar/"
+        },
+        {
             "name": "wpackagist-theme/twentytwentyfive",
             "version": "1.2",
             "source": {
@@ -6914,6 +6932,22 @@
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwentyfive/"
+        },
+        {
+            "name": "wpengine/advanced-custom-fields-pro",
+            "version": "6.5.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?s=composer&p=pro&t=6.5.0.1"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "replace": {
+                "wpackagist-plugin/advanced-custom-fields": "self.version",
+                "wpengine/advanced-custom-fields": "self.version"
+            },
+            "type": "wordpress-plugin"
         }
     ],
     "packages-dev": [
