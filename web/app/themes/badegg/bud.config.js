@@ -34,7 +34,7 @@ export default async (app) => {
    */
   app
     .setUrl('http://localhost:3000')
-    .setProxyUrl('https://think-boats.com.local.1fp.ltd')
+    .setProxyUrl('https://bedrock.local.badegg.uk')
     .watch(['resources/views', 'app']);
 
   /**
@@ -73,8 +73,5 @@ export default async (app) => {
       typography: {
         customFontSize: false,
       },
-    })
-    .useTailwindColors()
-    .useTailwindFontFamily()
-    .useTailwindFontSize();
+    });
 };
