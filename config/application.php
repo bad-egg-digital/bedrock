@@ -171,13 +171,12 @@ Config::define('S3_UPLOADS_REGION',     env('S3_UPLOADS_REGION'));
 Config::define('S3_UPLOADS_KEY',        env('S3_UPLOADS_KEY'));
 Config::define('S3_UPLOADS_SECRET',     env('S3_UPLOADS_SECRET'));
 
-
 /**
  * Fluent SMTP Setings
  */
 Config::define('FLUENTMAIL_SMTP_USERNAME', env('FLUENTMAIL_SMTP_USERNAME'));
 Config::define('FLUENTMAIL_SMTP_PASSWORD', env('FLUENTMAIL_SMTP_PASSWORD'));
-
+Config::define('FLUENTMAIL_SENDINBLUE_API_KEY', env('FLUENTMAIL_SENDINBLUE_API_KEY'));
 
 Config::apply();
 
