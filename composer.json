@@ -67,7 +67,8 @@
     "wpackagist-plugin/flamingo": "^2.6",
     "wpengine/advanced-custom-fields-pro": "^6.7",
     "ourcodeworld/name-that-color": "dev-master",
-    "wpackagist-plugin/resizable-editor-sidebar": "1.0.6"
+    "wpackagist-plugin/resizable-editor-sidebar": "1.0.6",
+    "badegguk/hard-boiled-security": "^1.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -89,6 +90,7 @@
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "badegguk/bad-egg-digital-login-page",
+        "badegguk/hard-boiled-security",
         "wpengine/advanced-custom-fields-pro"
       ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],

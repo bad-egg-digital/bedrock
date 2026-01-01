@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ff612e079c6a14f99464d43e9148603",
+    "content-hash": "45d0a582ae7850e497fe7f2b3d7752a7",
     "packages": [
         {
             "name": "badegguk/bad-egg-digital-login-page",
@@ -31,6 +31,32 @@
                 "issues": "https://github.com/badegguk-packagist/Bad-Egg-Digital-Login-Page/issues"
             },
             "time": "2025-06-03T15:19:29+00:00"
+        },
+        {
+            "name": "badegguk/hard-boiled-security",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bad-egg-digital/hard-boiled-security.git",
+                "reference": "e4a327a5002848dbd0d01b814cd210374730f098"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bad-egg-digital/hard-boiled-security/zipball/e4a327a5002848dbd0d01b814cd210374730f098",
+                "reference": "e4a327a5002848dbd0d01b814cd210374730f098",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPLv3"
+            ],
+            "description": "A simple plugin that hardens some common Wordpress vulnerabilities.",
+            "homepage": "https://github.com/bad-egg-digital/hard-boiled-security",
+            "support": {
+                "source": "https://github.com/bad-egg-digital/hard-boiled-security/tree/v1.0.1",
+                "issues": "https://github.com/bad-egg-digital/hard-boiled-security/issues"
+            },
+            "time": "2025-12-30T00:36:57+00:00"
         },
         {
             "name": "composer/installers",
