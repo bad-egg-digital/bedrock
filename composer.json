@@ -56,7 +56,6 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "^6.9",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentyfive": "^1.0",
     "koodimonni-language/core-en_gb": "^6.8",
     "johnbillion/extended-cpts": "^5.1",
     "wpackagist-plugin/autodescription": "^5.1",
@@ -73,7 +72,8 @@
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "laravel/pint": "^1.18",
-    "wpackagist-plugin/ajax-thumbnail-rebuild": "^1.14"
+    "wpackagist-plugin/ajax-thumbnail-rebuild": "^1.14",
+    "wpackagist-plugin/user-switching": "^1.11"
   },
   "config": {
     "optimize-autoloader": true,
